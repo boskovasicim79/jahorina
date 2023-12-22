@@ -153,7 +153,7 @@ header .contact p {
 @media (max-width: 991px) {
 
     .snow_wrap {
-        background-image: url('Jahorinamob.jpg');
+        background-image: url('./Jahorinamob.jpg');
     }
 
     .no_desk {
