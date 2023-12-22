@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*SECTION 1*/
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    transition: 0.5s;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+header ul li a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+header ul li.logo {
+    padding: 0;
+}
+
+header ul li:first-child {
+    padding-left: 0px;
+}
+
+.snow_wrap header a .logo {
+    max-width: 150px;
+    padding-top: 10px;
+}
+
+header .logo a img {
+    width: 100%;
+}
+
+
+header .logo2 {
+    display: none;
+}
+
+.no_desk {
+    display: none;
+}
+
+header .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f0b90b;
+    padding: 5px 20px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent);
+    color: #f0b90b;
+}
+
+header .contact p {
+    margin-left: 5px;
+}
+
+
+
+/*SNOW SNIJEG*/
+
+.snow_wrap {
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    background-image: url(/Jahorina_Vila_Aleksandra.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.snow,
+.snow:before,
+.snow:after {
+    position: absolute;
+    top: -650px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image:
+        radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+        radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+        radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+        radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+        radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+        radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+        radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+        radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+        radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+    background-size: 650px 650px;
+    animation: snow 3s linear infinite;
+    content: "";
+}
+
+.snow:after {
+    margin-left: -250px;
+    opacity: 0.5;
+    filter: blur(2px);
+    animation-duration: 6s;
+    animation-direction: reverse;
+}
+
+.snow:before {
+    margin-left: -350px;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation-duration: 9s;
+    animation-direction: reverse;
+}
+
+@keyframes snow {
+    to {
+        transform: translateY(650px);
+    }
+}
+
+
+/*SECTION 2*/
+
+.section2 {
+    height: 100vh;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 991px) {
+
+    .snow_wrap {
+        background-image: url(/Jahorina_Mobile.jpg);
+    }
+
+    .no_desk {
+        display: block;
+    }
+
+    .checkbox {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 32px;
+        top: 35px;
+        right: 40px;
+        z-index: 2;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .hamburger_lines {
+        display: block;
+        height: 26px;
+        width: 32px;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hamburger_lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .hamburger_lines.active .line {
+        background: #0e2431;
+    }
+
+    .hamburger_lines .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .hamburger_lines .line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hamburger_lines .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        display: block;
+        padding: 100px 50px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        transition: 0.5s;
+        z-index: 1;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    header {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    header ul li a {
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    header ul li a {
+        color: #0006;
+    }
+
+    header ul li:hover a {
+        color: #000;
+    }
+
+    header ul li:first-child {
+        padding-left: 30px;
+    }
+
+
+
+    input[type="checkbox"]:checked~.menu-items {
+        transform: translateX(0);
+    }
+
+    input[type="checkbox"]:checked~.hamburger_lines .line1 {
+        transform: rotate(45deg);
+    }
+
+    input[type="checkbox"]:checked~.hamburger_lines .line2 {
+        transform: scaleY(0);
+    }
+
+    input[type="checkbox"]:checked~.hamburger_lines .line3 {
+        transform: rotate(-45deg);
+    }
+
+    input[type="checkbox"]:checked~.logo {
+        display: none;
+    }
+
+    a .logo {
+        width: 100px;
+
+    }
+
+    a img .logo {
+        z-index: 10;
+    }
+
+
+    header .contact {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        
+    }
+}
